@@ -1,0 +1,135 @@
+﻿/*Arreglar posición del botón*/
+.searchButton {
+    height: 33px;
+    width: 55px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.divPaddingSearch {
+    padding-left: 0px;
+}
+
+.lblPeriodo{
+    font-size:15px
+}
+
+@media screen and (max-device-width: 321px) {
+    #divMayorDatosCompra {
+        margin-top: 8px !important;
+    }
+}
+
+@media screen and (max-device-width: 499px) {
+    #lblDatosCompra {
+        color: white
+    }
+
+    #bloqueDatosCompra {
+        margin-top: -35px;
+        background-color: transparent !important
+    }
+
+    /*#svgFondoFooter {
+        margin-top: 50%
+    }*/
+    #divMayorDatosCompra {
+        margin-top: 13px !important;
+    }
+}
+
+@media screen and (min-device-width: 400px) and (max-device-width: 499px) {
+    #divMayorDatosCompra {
+        margin-top: 20px !important;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 1366px) {
+    #Label11, #Label13, #Label15, #lblDatosCompra {
+        color: white
+    }
+
+    #bloqueDatosCompra {
+        background-color: transparent !important;
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (min-width: 1367px) {
+    #Label11, #Label13, #Label15, #lblDatosCompra {
+        color: white
+    }
+
+    #bloqueDatosCompra {
+        background-color: transparent !important;
+        margin-bottom: 50px;
+    }
+
+    #fondoDatosCompra {
+        margin-top: -100px !important;
+    }
+}
+
+
+@media screen and (max-device-width: 380px) {
+    .ddlMedioDePago {
+        width: auto !important
+    }
+
+    .ddlComboTienda {
+        width: auto !important
+    }
+
+    #DropDownList1 {
+        width: 100% !important;
+    }
+
+    #STipoCompra {
+        width: 100% !important;
+    }
+
+    #ComboTienda {
+        width: 100% !important;
+    }
+
+    #SMedioPago {
+        width: 100% !important;
+    }
+}
+
+/*icono de carrito*/
+@media screen and (min-device-width: 499px) {
+    .cart_anchor {
+        display: none !important
+    }
+}
+
+/*Carrito de compra*/
+@media screen and (max-device-width: 500px) {
+    #resumenDeLaCompra {
+        display: none !important
+    }
+
+    #bloqueHover {
+        display: none !important
+    }
+
+    #irCarrito {
+        font-size: 1.6rem !important;
+    }
+
+    /*#svgFondoFooter {
+        margin-top: 269px !important;
+    }*/
+}
+
+/*Para medidas de un iPhone 5/SE*/
+@media screen and (max-device-width: 321px) {
+    /*#svgFondoFooter {
+        margin-top: 305px !important; 
+    }*/
+
+    #divMayorDatosCompra {
+        margin-top: 7px !important
+    }
+}

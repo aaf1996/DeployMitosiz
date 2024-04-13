@@ -1,0 +1,662 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    background: #eee;
+    font-family: roboto;
+    display: flex; /* You delete it on your web page */
+    justify-content: center; /* and this - delete */
+    
+}
+
+/*#WindowLoad {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 3200;
+    filter: alpha(opacity=65);
+    -moz-opacity: 65;
+    opacity: 0.65;
+    background: #999;
+}*/
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+
+.login-card {
+    /*min-height: 100vh;*/
+    height: 100%;
+    /*background-image: url('https://selimdoyranli.com/cdn/material-form/img/bg.jpg');*/
+    background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    -wenkit-background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 1px rgb(0, 193, 255 );
+    /*box-shadow: 0 1px 6px 0 #c79139, 0 1px 6px 0 rgb(0, 193, 255 );*/
+    box-shadow: 0 1px 6px 0 #5c35d7;
+    z-index: 2;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-family: roboto !important;
+}
+
+@media (max-width: 500px){
+    .login-card{
+        height:100%
+    }
+}
+
+.login-card:after {
+    /*background: linear-gradient(-135deg, rgb(0, 99, 255), rgb(0, 255, 144 ));*/
+    /*background: linear-gradient(-105deg, orange, white);*/
+    background: #5c35d7;
+    /* Login Card Arkaplan Rengi */
+    /*background: -webkit-linear-gradient(-135deg, rgb(13, 68, 154), #eee);*/
+    /* Login Card Arkaplan Rengi */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    /*opacity: 0.7;*/
+    opacity: .2;
+    z-index: 3;
+}
+
+    .login-card > form {
+        z-index: 4;
+        position: relative;
+        padding: 0px 25px;
+        width: 100%;
+    }
+
+.logo-kapsul {
+    text-align: center;
+    position: relative;
+    opacity: 0.8;
+}
+
+.logo {
+    height: auto;
+    /*padding: 50px 0px;*/
+}
+/* form başlangıç stiller ------------------------------- */
+
+::placeholder {
+    color: red;
+}
+
+/* También puedes apuntar a un campo específico si es necesario */
+input::placeholder {
+    color: white;
+}
+
+.group {
+    position: relative;
+    margin-bottom: 45px;
+}
+
+    .group input {
+        font-size: 18px;
+        padding: 10px 10px 10px 10px;
+        display: block;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        background: none;
+        color: white;
+    }
+       
+
+        .group input:focus {
+            outline: none;
+        }
+    /* LABEL ======================================= */
+
+    .group label {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 18px;
+        font-weight: normal;
+        position: absolute;
+        pointer-events: none;
+        left: 5px;
+        top: 5px;
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+    }
+    /* active durum */
+
+    .group input:focus ~ label,
+    input:valid ~ label {
+        top: -20px;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.7);
+    }
+/* BOTTOM BARS ================================= */
+
+.bar {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+    .bar:before,
+    .bar:after {
+        content: '';
+        height: 2px;
+        width: 0;
+        bottom: 1px;
+        position: absolute;
+        background: rgba(255, 255, 255, 0.7);
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+    }
+
+    .bar:before {
+        left: 50%;
+    }
+
+    .bar:after {
+        right: 50%;
+    }
+/* active durum bar */
+
+.group input:focus ~ .bar:before,
+.group input:focus ~ .bar:after {
+    width: 50%;
+}
+/* HIGHLIGHTER ================================== */
+
+.highlight {
+    position: absolute;
+    height: 0%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+/* active durum */
+
+.group input:focus ~ .highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+/* form animasyon ================ */
+
+@-webkit-keyframes inputHighlighter {
+    from {
+        background: rgba(255, 255, 255, 0.7);
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@-moz-keyframes inputHighlighter {
+    from {
+        background: rgba(255, 255, 255, 0.7);
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@keyframes inputHighlighter {
+    from {
+        background: rgba(255, 255, 255, 0.7);
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+.input-ikon {
+    font-size: 25px !important;
+    position: relative;
+    color: gray;
+}
+
+.input-sifre-ikon {
+    font-size: 22px !important;
+    position: relative;
+    color: gray;
+}
+
+.span-input {
+    /*margin-left: 10px;*/
+    position: relative;
+    top: -5px;
+    color: gray
+}
+
+.giris-yap-buton,
+.kayit-ol-buton,
+.sifre-hatirlat-buton {
+    background: linear-gradient(-135deg, rgb(63, 81, 181), rgb(233, 30, 99));
+    background: white;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #eee;
+    font-family: roboto;
+    font-weight: 100;
+    padding: 10px;
+    border-radius: 3px;
+    outline: none;
+    opacity: 0.8;
+}
+
+.forgot-and-create {
+    margin: 20px 0px;
+}
+
+    .forgot-and-create a {
+        color: mediumseagreen;
+        /*font-size: 12px;*/
+        text-decoration: none;
+        font-weight: 100;
+        margin-right: 10px;
+    }
+/* Geçiş Links Forgot and Create */
+
+.zaten-hesap-var-link {
+    color: mediumseagreen;
+    font-size: 14px;
+    padding: 20px 0px;
+    text-decoration: none;
+    display: block;
+}
+
+/*.giris-yap-buton:hover {
+    background: -webkit-linear-gradient(-135deg, rgb(123, 225, 248), rgb(136, 250, 114) );
+    transition: all 200ms ease;
+    color: green
+}*/
+
+#iniciarSesion {
+    /*background: radial-gradient(white -10%, transparent);*/
+    background: #1c93cd;
+    transition: .5s;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 6px;
+    border-color: limegreen;
+    /*box-shadow:0 0 6px 3px #8cf777;*/
+    box-shadow: 0 0 6px 3px lightblue;
+}
+
+    #iniciarSesion:hover {
+        color: green;
+        /*background-color: orange;*/
+        border-radius: 6px;
+        border-color: orange;
+        box-shadow: 0 0 6px 1px #1B1464;
+    }
+
+#btnEnviarCorreoLogin {
+    /*background: radial-gradient(white -10%, transparent);*/
+    background: white;
+    transition: .5s;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 6px;
+    border-color: limegreen;
+    /*box-shadow:0 0 6px 3px #8cf777;*/
+    box-shadow: 0 0 6px 3px lightblue;
+}
+
+    #btnEnviarCorreoLogin:hover {
+        color: green;
+        /*background-color: orange;*/
+        border-radius: 6px;
+        border-color: orange;
+        box-shadow: 0 0 6px 1px #1B1464;
+    }
+
+
+/*------*/
+/*.sifre-hatirlat-link{
+
+}*/
+
+.sifre-hatirlat-link:hover {
+    border-bottom: 1px solid #1B1464
+}
+
+/*.hesap-olustur-link{
+
+}*/
+.hesap-olustur-link:hover {
+    border-bottom: 1px solid aquamarine
+}
+
+
+
+
+
+
+/*ADD*/
+
+#fondoFormularioLogin {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100vw
+}
+
+
+@media (max-width: 1760px) {
+    /*#fondoFormularioLogin {
+        background-image: url(../img/LOGIN-1920-x-1080.png);
+    }*/
+
+    #bloqueNoEresEmpresario {
+        justify-content: space-around !important;
+    }
+}
+
+@media (max-width: 1580px) {
+    /*#fondoFormularioLogin {
+        background-image: url(../img/LOGIN-1920-x-1080.png);
+    }*/
+
+    .claseFuente1 {
+        font-size: 40px !important;
+    }
+}
+
+@media (max-width: 1520px) {
+    /*#fondoFormularioLogin {
+        background-image: url(../img/LOGIN-1920-x-1080.png);
+    }*/
+
+    #bloqueNoEresEmpresario {
+        justify-content: space-between !important;
+    }
+}
+
+
+@media (min-device-width: 0) and (max-device-width: 499px) {
+    #fondoFormularioLogin {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        /*background: url(../../img/hojasCaen.gif) center no-repeat white;*/
+        background-size: 100% 100%;
+        opacity: 1.1
+    }
+
+    .login-card:after {
+        background: linear-gradient(-1deg, #5c35d7, #5c35d7 ) !important;
+    }
+
+    #logoLogin {
+        width: 500px;
+        margin-top: -100px;
+    }
+
+    #bienvenidosLogin {
+        width: 320px;
+    }
+
+    #ingreseDatos {
+        font-size: 38px;
+        margin-top: 50px;
+    }
+
+    #bloqueNoEresEmpresario {
+        margin-top: 25px;
+        justify-content: space-evenly !important;
+    }
+
+    #noEresEmpresario {
+        font-size: 26px !important;
+        margin-right: 120px;
+    }
+
+    #ClickAqui {
+        margin-left: -200px !important;
+        font-size: 22px !important;
+    }
+
+    #campoUsuario {
+        margin-top: auto
+    }
+
+    #labelUsuario {
+        font-size: 40px !important;
+    }
+
+    #iconoLabelUsuario {
+        display: contents;
+        font-size: 40px !important;
+    }
+
+    #LoginUser_UserName {
+        font-size: 50px;
+        margin-top: 20px;
+    }
+
+    #UserName {
+        font-size: 35px;
+    }
+
+    #campoContraseña {
+        margin-top: 75px
+    }
+
+    #iconoLabelClave {
+        font-size: 40px !important;
+        display: contents;
+    }
+
+    #labelClave {
+        font-size: 40px !important;
+    }
+
+    #LoginUser_Password {
+        font-size: 50px;
+        margin-top: 20px;
+    }
+
+    #Password {
+        font-size: 35px;
+    }
+
+    #iniciarSesion {
+        margin-top: 75px;
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        /*background: -webkit-linear-gradient(-135deg, rgb(123, 225, 248), rgb(136, 250, 114) );*/
+        bottom: 80px;
+    }
+
+    .ptxt {
+        cursor: pointer;
+        margin-top: 30px !important;
+        font-size: 30px;
+        margin-left: 30px;
+    }
+
+    #recordarMiContraseña {
+        color: black;
+        font-size: 25px;
+        margin-top: 20px;
+    }
+
+    .forgot-and-create {
+        margin-top: 75px;
+        bottom: 80px;
+        position: relative;
+    }
+
+    .sifre-hatirlat-link {
+        font-size: 30px !important;
+    }
+
+    .hesap-olustur-link {
+        font-size: 30px !important;
+        float: right;
+    }
+
+    #signoInterrogacion1 {
+        font-size: 30px !important
+    }
+
+    #signoInterrogacion2 {
+        font-size: 30px !important
+    }
+
+    .logo-kapsul {
+        bottom: 120px
+    }
+
+    #campoUsuario {
+        bottom: 80px
+    }
+
+    #campoClave {
+        bottom: 80px
+    }
+
+    #form1 {
+        padding-left: 100px;
+        padding-right: 100px;
+        margin-top: 180px !important;
+    }
+
+    .group input {
+        font-size: 30px;
+    }
+
+    #imgLogoParaLogin{
+        width: 300px
+    }
+
+
+    #LoginUser_Button1 {
+        line-height: 2;
+        font-size: 30px !important;
+    }
+}
+
+@media (min-device-width: 500px) {
+    #fondoFormularioLogin {
+        /*background-image: url(../img/IMAGEN-PARA-LOGIN-1920x1080.jpg);*/
+        background-color: #987fe9;
+    }
+}
+
+@media (min-device-width: 750px) and (max-width: 1119px) {
+    /*#fondoFormularioLogin {
+        background-image: url(../img/LOGIN-1920-x-1080.png);
+    }*/
+
+    .login-card {
+        width: 44% !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-device-width: 1120px) and (max-width: 1270px) {
+    /*#fondoFormularioLogin {
+        background-image: url(../img/LOGIN-1920-x-1080.png);
+    }*/
+
+    .login-card {
+        width: 40% !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+@media screen and (min-device-width: 750px) and (max-device-width: 1120px) and (max-device-height: 1366px) {
+    /*#fondoFormularioLogin {
+        background-image: url(../img/LOGIN-1920-x-1080.png);
+    }*/
+
+    .login-card {
+        width: 54% !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (min-device-width: 750px) and (max-device-width: 1120px) and (max-device-height: 1024px) {
+    /*#fondoFormularioLogin {
+        background-image: url(../img/LOGIN-1920-x-1080.png);
+    }*/
+
+    .login-card {
+        width: 60% !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 750px) and (max-width: 960px) {
+
+
+    .login-card {
+        width: 52% !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 749px) {
+
+
+    .login-card {
+        width: 78% !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+@media (min-width: 1120px) {
+    /*#fondoFormularioLogin {
+        background-image: url(../img/LOGIN-1920-x-1080.png);
+    }*/
+
+    .login-card {
+        width: 30%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
