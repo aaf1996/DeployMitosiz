@@ -159,6 +159,7 @@ function GetInsertPromo(lstTCliente, lstTCompra, idPromo) {
     var DatosObject = {};
     DatosObject['Estado'] = document.getElementById("chkEstado").checked;
     DatosObject['Obligatorio'] = document.getElementById("chkObligatorio").checked;
+    DatosObject['NewPromotion'] = document.getElementById("chkTC_150").checked;
     DatosObject['Maximo_uni'] = $("#txtMaxUnidades").val();
     DatosObject['IdProductoXPais'] = $("#cboProducto").val();
     DatosObject['Pais'] = $("#cboPais").val();
@@ -328,6 +329,7 @@ function fillModalData(data) {
     $("#cboProducto").val(data[0].IdProductoXPais);
     $("#chkEstado").prop('checked', data[0].Estado).change();
     $("#chkObligatorio").prop('checked', data[0].Obligatorio).change();
+    $("#chkTC_150").prop('checked', data[0].NewPromotion).change();
     $("#txtMaxUnidades").val(data[0].Maximo_uni);
     var lstTClientes = data[0].lstPromoU_TClientes;
     var lstTCompras = data[0].lstPromoU_TCompras;

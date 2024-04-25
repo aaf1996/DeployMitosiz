@@ -439,28 +439,37 @@ function EliminarProducto(idProductoPais, t) {
         },
         success: function (dataS) {
             var Datos = dataS.d;
-            montoCompraEval = parseFloat(Datos.Monto);
-            puntosCompraEval = parseFloat(Datos.Puntos);
-            $('#LbPuntosRango').text(Datos.PuntosPromo);
-            $('#LbPuntosCompra').text(Datos.Puntos);
-            $('#LbPrecioTotal').text("S/." + parseFloat(Datos.Total).toFixed(2));
-            $('#LbPrecioPagar').text("S/." + parseFloat(Datos.Monto).toFixed(2));
+            if (Datos.Mensaje.includes("elimine")) {
+                Swal.fire({
+                    type: 'error',
+                    title: 'Oops...',
+                    text: Datos.Mensaje,
+                })
+            }
+            else {
+                montoCompraEval = parseFloat(Datos.Monto);
+                puntosCompraEval = parseFloat(Datos.Puntos);
+                $('#LbPuntosRango').text(Datos.PuntosPromo);
+                $('#LbPuntosCompra').text(Datos.Puntos);
+                $('#LbPrecioTotal').text("S/." + parseFloat(Datos.Total).toFixed(2));
+                $('#LbPrecioPagar').text("S/." + parseFloat(Datos.Monto).toFixed(2));
 
 
-            $('#lbPuntosRango2').text(Datos.PuntosPromo);
-            $('#lblPuntos2').text(Datos.Puntos);
-            $('#lblPTotal2').text("S/." + parseFloat(Datos.Total).toFixed(2));
-            $('#lblPPagar2').text("S/." + parseFloat(Datos.Monto).toFixed(2));
-            $("#tblDetProd> tbody > tr").eq(index).remove();
-            Swal.fire({
-                title: 'Perfecto!',
-                text: 'Producto Eliminado',
-                type: "success"
-            }).then(function () {
-                if (Datos.Mensaje == "0") {
-                    window.location = "TiendaSN.aspx";
-                }
-            });
+                $('#lbPuntosRango2').text(Datos.PuntosPromo);
+                $('#lblPuntos2').text(Datos.Puntos);
+                $('#lblPTotal2').text("S/." + parseFloat(Datos.Total).toFixed(2));
+                $('#lblPPagar2').text("S/." + parseFloat(Datos.Monto).toFixed(2));
+                $("#tblDetProd> tbody > tr").eq(index).remove();
+                Swal.fire({
+                    title: 'Perfecto!',
+                    text: 'Producto Eliminado',
+                    type: "success"
+                }).then(function () {
+                    if (Datos.Mensaje == "0") {
+                        window.location = "TiendaSN.aspx";
+                    }
+                });
+            }
         }
     });
 }

@@ -119,6 +119,10 @@
                                             <label>Venta Directa</label>
                                             <input id="chkTC_VD" type="checkbox" class="form-check-input">
                                         </div>
+                                        <div class="col-md-3" style="display: flex; justify-content: space-between;">
+                                            <label>Promoción 150</label>
+                                            <input id="chkTC_150" type="checkbox" class="form-check-input">
+                                        </div>
                                     </div>
                                     <div class="row" style="margin-top: 15px;">
                                         <div class="col-md-4" style="display: flex; justify-content: space-between;">
@@ -242,7 +246,7 @@
         <script src="js/plugins/datatables/jquery.dataTables.js"></script>
         <script src="js/plugins/datatables/dataTables.bootstrap.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
-        <script src="js/PromocionUnica_Paquete.js?v6" type="text/javascript"></script>
+        <script src="js/PromocionUnica_Paquete.js?v7" type="text/javascript"></script>
         <script type="text/javascript">
 
             $(".js-example-templating").select2({
